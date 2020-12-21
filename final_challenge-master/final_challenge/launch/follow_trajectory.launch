@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="final_challenge" type="pure_pursuit_obstacle_avoidance.py" 
+            name="trajectory_follower" output="screen">
+		<param name="odom_topic" value="/pf/pose/odom"/>
+	</node>
+</launch>

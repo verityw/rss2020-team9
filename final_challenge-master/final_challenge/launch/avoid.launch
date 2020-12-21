@@ -1,0 +1,14 @@
+<launch>
+
+  <include file="$(find final_challenge)/launch/follow_trajectory.launch"/>
+
+  <!-- THIS IS FROM path_planning/launch/load_trajectory.launch /-->
+  <node pkg="lab6" type="trajectory_loader.py" name="Trajectory_loader" output="screen">
+  	<param name="trajectory" 
+         value="$(find lab6)/trajectories/OBBIES.traj"/>
+  </node>
+
+  
+
+  
+</launch>

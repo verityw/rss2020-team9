@@ -1,0 +1,6 @@
+<launch>
+  <node name="obstacle_detection" pkg="final_challenge" type="obstacle_detection.py" output="screen"/>
+  <node name="obstacle_avoidance" pkg="final_challenge" type="path_planning_obstacle.py" output="screen">
+    <param name="odom_topic" value="/pf/pose/odom"/>
+  </node>
+</launch>
