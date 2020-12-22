@@ -10,12 +10,15 @@
 0. [Lab 3: Wall Following and Safety Controller](lab-3-wall-following-and-safety-controller)
 0. [Lab 4: Vision and Line Following](lab-4-vision-and-line-following)
 0. [Lab 5: Localization](#lab-5-localization)
-0. [Lab 6:]
+0. [Lab 6: Path Planning and Pure Pursuit](#lab-6-path-planning-and-pure-pursuit)
 0. [Final Challenge](#final-challenge)
 
 ## Introduction
 This repository contains the code, lab reports, and lab briefing presentations for Team 9 of MIT's capstone undergraduate robotics class, Robotics: Science and Systems (RSS), as offered in Spring 2020.
+
 We implemented several key robotics and autonomous driving algorithms in simulation and on a real robot platform. These algorithms include several computer vision techniques (color segmentation, SIFT, and camera homography transformations), pure pursuit controllers, [RRT*](https://arxiv.org/abs/1105.1186) for pathfinding, and particle filters for localization. Each assignment culminated in a lab report and team presentation discussing both the theory and experimental results of each of our algorithms. At the end of the class, we had a final autonomous racing challenge in simulation, wherein our team placed second.
+
+*The following was written by the host of this repository, William Chen (verityw). If you have any questions, please direct them to him at verityw@mit.edu.*
 
 ## Technical Details
 We implemented the following algorithms using the Python bindings for the [Robot Operating System (ROS)](ros.org) message-passing framework. Development, simulation testing, and the final challenge were all done in [Ubuntu 18.04](https://releases.ubuntu.com/18.04.5/). The initial labs were also implemented on a physical robot racecar platform sporting a [ZED Stereo Camera](https://www.stereolabs.com/zed/), [Hokuyo UST-10LX Range Finder](https://hokuyo-usa.com/products/lidar-obstacle-detection/ust-10lx) LIDAR, and [NVIDIA Jetson TX2](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-tx2/) as the onboard computer, also running the Ubuntu 18.04. More details regarding the system can be found [here](https://racecar.mit.edu/).
@@ -59,3 +62,7 @@ The core of the algorithm is to grow an optimally-connected tree towards randoml
 
 ## Final Challenge:
 Briefing · Code
+
+The final challenge of Robotics: Science and Systems is an annual autonomous race through the basement halls of the [Stata Center](https://www.csail.mit.edu/about/stata-center), on MIT's campus. Due to COVID-19, during the 2020 semester, we instead conducted the race virtually, in the [TESSE](https://github.com/MIT-TESSE/tesse-core) simulation environment. The vehicles raced through the streets of a photorealistic virtual city autonomously, trying to finish the track as fast as possible while experiencing realistic sensor noise and physics.
+
+Initially, we chose several key checkpoints along the track that the car would try to reach. We then used the pure pursuit controller from the previous lab to have the car drive along the piecewise-linear path defined by those checkpoints. Finally, to figure out the car's location on the map (and thus to find a pure pursuit chase point), we adapted the particle filter code from Lab 5 to work in the large, urban environment. Ultimately, we achieved the second fastest time of any team in the class with our autonomous driving and localization algorithms.
