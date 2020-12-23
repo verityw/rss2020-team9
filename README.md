@@ -7,6 +7,7 @@
 ## Contents
 1. [Introduction](#introduction)
 0. [Technical Details](#technical-details)
+0. [Lab 1 & 2: Git, VMs, and ROS](#lab-1--2-git-vms-and-ros)
 0. [Lab 3: Wall Following and Safety Controller](lab-3-wall-following-and-safety-controller)
 0. [Lab 4: Vision and Line Following](lab-4-vision-and-line-following)
 0. [Lab 5: Localization](#lab-5-localization)
@@ -22,6 +23,10 @@ We implemented several key robotics and autonomous driving algorithms in simulat
 
 ## Technical Details
 We implemented the following algorithms using the Python bindings for the [Robot Operating System (ROS)](ros.org) message-passing framework. Development, simulation testing, and the final challenge were all done in [Ubuntu 18.04](https://releases.ubuntu.com/18.04.5/). The initial labs were also implemented on a physical robot racecar platform sporting a [ZED Stereo Camera](https://www.stereolabs.com/zed/), [Hokuyo UST-10LX Range Finder](https://hokuyo-usa.com/products/lidar-obstacle-detection/ust-10lx) LIDAR, and [NVIDIA Jetson TX2](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-tx2/) as the onboard computer, also running the Ubuntu 18.04. More details regarding the system can be found [here](https://racecar.mit.edu/).
+
+## Lab 1 & 2: Git, VMs, and ROS
+
+The first lab assignment we received was simply to install Ubuntu 18.04 or install a virtual machine running the OS, as both would be integral for later labs. The assignment also introduced ROS, which was then used to run a basic simulation for us to test wall following algorithms on.
 
 ## Lab 3: Wall Following and Safety Controller
 Paper · Briefing · Code
